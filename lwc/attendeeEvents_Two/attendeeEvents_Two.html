@@ -1,0 +1,30 @@
+<template>
+    <lightning-card variant="brand" title="My Events" icon-name="standard:event">
+        <lightning-tabset variant="scoped" active-tab-value="upevents">
+            <lightning-tab label="Upcoming Events" value="upevents" >
+              <div class="slds-m-around_small">
+                <template if:true={upcomingEventsTableData}>
+                    <lightning-datatable
+                    key-field="Id" 
+                    data={upcomingEventsTableData} 
+                    columns={columns}
+                    hide-checkbox-column
+                    ></lightning-datatable>
+                </template>
+              </div>
+            </lightning-tab>
+    
+            <lightning-tab label="Past Events" value="speaker">
+                <template if:true={pastEventsTableData}>
+                    <lightning-datatable
+                    key-field="Id" 
+                    data={pastEventsTableData} 
+                    columns={columns}
+                    hide-checkbox-column
+                    ></lightning-datatable>
+                </template> 
+            </lightning-tab>
+    
+        </lightning-tabset> 
+    </lightning-card>
+  </template>
